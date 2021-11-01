@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+/*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+
+.ncss2 {
+direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+
+}
+
+.ncss2 .c1
+{
+    background-color: lightblue;
+    text-align: center;
+}
+
+.ncss2 .c1 h4
+{
+    font-size: 18px;
+}
+
+.ncss2 .c2
+{
+    background-color: #2a9999;
+    text-align: center;
+    margin-top: -8px !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.ncss2 .c2 h4
+{
+    font-size: 23px;
+    font-family: 'Arial-BoldMT';
+}
+
+.ncss2 .c3
+{
+/*    margin-top: 35px;*/
+    text-align: center;
+}
+
+.ncss2 .c3 h4
+{
+    font-size: 25px;
+}
+
+.ncss2 .c5
+{
+/*    margin-top: 35px;*/
+    text-align: center;
+    border: 1px solid;
+    padding-top: 5px;
+}
+
+.ncss2 .c5 h4
+{
+    font-size: 23px;
+}
+
+
+.ncss2 .c4 .table-bordered td{
+    border: 1px solid #000;
+    font-size: 23px;
+    padding-top:20px !important;
+}
+
+.ncss2 .c4 .table-bordered th 
+{
+    border: 1px solid #000;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 23px;
+}

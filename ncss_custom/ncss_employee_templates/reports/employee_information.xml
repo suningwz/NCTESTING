@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="ncss2_report_account_move"
+                string="New Employee Information"
+                model="hr.contract"
+                report_type="qweb-pdf"
+                file="ncss_employee_templates.ncss2_report_account_move"
+                name="ncss_employee_templates.ncss_employee_information_template"
+                />
+
+        <template id="ncss_employee_information_docs">
+<t t-call="web.internal_layout">
+<t t-foreach="docs" t-as="o">
+
+  <div class="page container ncss2">
+
+      <style>
+          @font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/ncss_employee_templates/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/ncss_employee_templates/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+/*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/ncss_employee_templates/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/ncss_employee_templates/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+
+.ncss2 {
+direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+
+}
+
+.ncss2 .c1
+{
+    background-color: lightblue;
+    text-align: center;
+}
+
+.ncss2 .c1 h4
+{
+    font-size: 18px;
+}
+
+.ncss2 .c2
+{
+    background-color: #2a9999;
+    text-align: center;
+    margin-top: -8px !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.ncss2 .c2 h4
+{
+    font-size: 20px;
+    font-family: 'Arial-BoldMT';
+}
+
+.ncss2 .c3
+{
+/*    margin-top: 35px;*/
+    text-align: center;
+}
+
+.ncss2 .c3 h4
+{
+    font-size: 20px;
+}
+
+.ncss2 .c5
+{
+/*    margin-top: 35px;*/
+    text-align: center;
+    padding-top: 5px;
+          border-bottom: 2px solid #aeaeae;
+          margin-left:15px;
+          margin-right:15px;
+}
+
+.ncss2 .c5 h4
+{
+    font-size: 16px;
+}
+
+
+.ncss2 .c4 .table-bordered td{
+    border: 1px solid #aeaeae;
+    font-size: 16px;
+    padding-top:0px !important;
+    padding-bottom: 0px !important;
+    vertical-align:middle !important;
+
+}
+
+.ncss2 .c4 .table-bordered th
+{
+    border: 1px solid #aeaeae;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    vertical-align:middle !important;
+}
+
+          .vertical-header span,
+.vertical-header {
+  white-space: nowrap !important;
+  writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    -webkit-transform: rotate(0.5turn) !important;
+}
+
+.vertical-header2 span,
+.vertical-header2 {
+  white-space: nowrap !important;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+    transform: rotate(1turn) !important;
+}
+
+      </style>
+      <div class="row">
+
+              <div style="width:100%;margin-top: 5px;text-align: center;">
+            <img src="/ncss_employee_templates/static/src/img/ncsslogo.png" />
+          </div>
+
+
+        </div>
+
+      <div class="row" style="margin-top: 5px;">
+            <div style="width:100%;text-align: center;">
+                <div>
+                    <h4 style="padding:5px;background-color: #1c2c5f;font-size:20px !important;display: inline-block;color:#fff;">الشؤون المالية والإدارية</h4>
+                    <div>
+                        <h4 style="padding:5px;background-color: #ee8323;font-size:18px !important;display: inline-block;direction:ltr;color:#fff;">FINANCIAL AND ADMINISTRATIVE AFFAIRS‬‬</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="padding:5px;background-color: #1c2c5f;font-size:20px !important;display: inline-block;color:#fff;">إدارة الموارد البشرية</h4>
+                    <div>
+                        <h4 style="padding:5px;background-color: #ee8323;font-size:18px !important;display: inline-block;direction:ltr;color:#fff;">HR. AND ADMINISTRATIVE DEPARTMENT‬‬</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row c4" style="margin-top:5px;">
+            <div style="width:100%;">
+                <table class="table table-bordered">
+  <col/>
+  <colgroup span="2"></colgroup>
+  <colgroup span="2"></colgroup>
+
+                    <tr><th style="width: 50px !important;max-width:50px !important;border-top: 1px solid #aeaeae !important;border-right: 1px solid #aeaeae !important;border-bottom: 1px solid #aeaeae !important;" rowspan="12" class="vertical-header2"><span style="margin-right:5px !important;padding-bottom: 200px !important;">بيانات الموظف
+التوظيف</span><span style="margin-right:-27px !important;padding-top: 350px !important;">شؤون الموظفين</span></th></tr>
+                    <tr>
+                        <th colspan="4" scope="colgroup" style="font-size:20px !important;background-color: #ee8323;color:#fff;border-left: none;border-top:none;border-right: none;text-align: right;padding-right:10px;padding-top:8px;padding-bottom:8px;">نموذج مباشرة العمل ‬‬</th>
+    <th colspan="4" scope="colgroup" style="border-top: none;border-bottom: none;border-right:none;background-color: #1c2c5f;color:#fff;direction: ltr;text-align:left;padding-left:10px;padding-top:8px;padding-bottom:8px;">JOB COMMENCEMENT FORM</th>
+                        <th style="width: 50px !important;max-width:50px !important;border:none;border-top: 1px solid #aeaeae !important;border-left: 1px solid #aeaeae !important;border-bottom: 1px solid #aeaeae !important;" rowspan="12" class="vertical-header"><span style="margin-right:5px !important;padding-bottom: 100px !important;">Employee Details Recruitment</span><span style="margin-right:-27px !important;padding-top: 380px !important;padding-bottom:20px;">H.R</span></th>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" scope="colgroup" style="border-left: 1px solid #fff;border-top:none;border-right: none;text-align: right;padding-right:10px;background-color:#c0c0c0;color:#000;padding-top:5px;padding-bottom:5px;">‫الموظف‬ ‫‪:‬‬ ‫بيانات‬ ‫‪.‬‬ ‫‪1‬‬</th>
+    <th colspan="4" scope="colgroup" style="border-top: none;border-bottom: none;border-right:none;background-color:#e8e8e8;direction: ltr;text-align:left;padding-left:10px;padding-top:5px;padding-bottom:5px;">1. EMPLOYEE DETAILS‬:</th>
+                    </tr>
+
+  <tr>
+    <th scope="col" style="text-align: right;width: 250px;padding-top: 10px;padding-right:10px;vertical-align:middle !important;">الاسم</th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+    <td colspan="3" style="text-align: center;    direction: ltr;width:30%;vertical-align:middle !important;">
+        <span t-esc="o.employee_id.name" />
+    </td>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <th colspan="2" scope="colgroup" style="padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;border-top: none;text-align:left;padding-left:10px;vertical-align:middle !important;">Name</th>
+  </tr>
+  <tr>
+    <th scope="col" style="text-align: right;width: 250px;padding-top: 10px;padding-right:10px;">المسمى الوظيفي </th>
+     <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+    <td colspan="3" style="text-align: center;    direction: ltr;width:30%;">
+        <span t-esc="o.job_id.name" />
+    </td>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <th scope="col" style="text-align: left;width: 250px;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;">Job Title</th>
+
+  </tr>
+                    <tr>
+    <th scope="col" style="text-align: right;width: 250px;padding-top: 10px;padding-right:10px;">الادارة</th>
+                        <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+    <td colspan="3" style="text-align: center;    direction: ltr;width:30%;">
+        <span t-esc="o.department_id.name" />
+    </td>
+                        <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+                        <th scope="col" style="text-align: left;width: 250px;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;">Department</th>
+  </tr>
+  <tr>
+    <th scope="col" style="text-align: right;width: 250px;padding-top: 10px;padding-right:10px;">تاريخ مباشرة العمل </th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+    <td colspan="3" style="text-align: center;direction: ltr;width:30%;">
+        <span t-esc="o.date_start" />
+    </td>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+">..</span></th>
+      <th scope="col" style="text-align: left;width: 250px;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;">START OF WORK</th>
+  </tr>
+  <tr>
+    <th scope="col" style="text-align: right;width: 250px;padding-top: 10px;padding-right:10px;">نوعية التعاقد</th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <td colspan="3" style="text-align: center;    direction: ltr;width:30%;"><span t-esc="o.contract_type" /></td>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <th scope="col" style="text-align: left;width: 250px;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;">Contract Type</th>
+  </tr>
+
+                    <tr>
+    <th scope="col" style="text-align: right;width: 250px;padding-top: 10px;padding-right:10px;">الرقم الوظيفي </th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <td colspan="3" style="text-align: center;    direction: ltr;width:30%;"><span t-esc="o.employee_id.employee_code" /></td>
+      <th scope="col" style="text-align: right;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <th scope="col" style="text-align: left;width: 250px;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;">Employment No.</th>
+  </tr>
+
+                    <tr>
+    <th scope="col" style="text-align: right;width: 250px;padding-top: 10px;padding-right:10px;">توقيع الموظف /
+التاريخ </th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <td colspan="3" style="text-align: center;    direction: ltr;width:30%;">...</td>
+      <th scope="col" style="text-align: right;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <th scope="col" style="text-align: left;width: 250px;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;">Signature / Date</th>
+  </tr>
+
+                    <tr>
+    <th scope="col" style="text-align: right;width: 250px;padding-top: 10px;padding-right:10px;">اسم الموظف
+المختص</th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <td colspan="3" style="text-align: center;    direction: ltr;width:30%;">فراس بن عبد الرزاق الهاشم </td>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle !important;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <th scope="col" style="text-align: left;width: 250px;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;">Authorized Employee</th>
+  </tr>
+
+                    <tr>
+    <th scope="col" style="text-align: right;width: 250px;vertical-align:middle">التوقيع / التاريخ </th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    ">..</span></th>
+      <td colspan="3" style="text-align: center;    direction: ltr;width:30%;vertical-align:middle">....</td>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    ">..</span></th>
+      <th scope="col" style="text-align: left;width: 250px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;vertical-align:middle">Signature / Date</th>
+  </tr>
+
+
+</table>
+
+
+                 <table class="table table-bordered" style="margin-top: -10px;">
+  <col/>
+  <colgroup span="2"></colgroup>
+  <colgroup span="2"></colgroup>
+
+                     <tr><th style="width: 50px !important;max-width:50px !important;text-align:center;border:none;border-right: 1px solid #aeaeae !important;border-bottom: 1px solid #aeaeae !important;border-top: 1px  #aeaeae solid !important;" rowspan="12" class="vertical-header2"><span style="margin-right:5px !important;padding-top: 100px !important;">الإدارة المعنية</span></th></tr>
+                    <tr>
+                        <th colspan="4" scope="colgroup" style="background-color:#c0c0c0;border-left: 1px solid #fff;border-top:none;border-right: none;text-align: right;padding-right:10px;padding-top:5px;padding-bottom:5px;">‫الموظف‬ ‫بيانات‬ ‫تأكيد‬‬‬</th>
+    <th colspan="4" scope="colgroup" style="border-top: none;border-bottom: none;border-right:none;background-color:#e8e8e8;direction: ltr;text-align:left;padding-left:10px;padding-top:5px;padding-bottom:5px;">Emp. Details Confirmation:</th>
+                        <th style="width: 50px !important;max-width:50px !important;text-align:center !important;padding-top:60px !important;border-left: 1px soild #aeaeae !important;border-top: 1px solid #aeaeae !important;border-bottom: 1px solid #aeaeae !important;" rowspan="12" class="vertical-header"><span style="margin-right:5px !important;font-size:15px;">CONCERNED DEPARTMENT</span></th>
+                    </tr>
+
+  <tr>
+    <th scope="col" style="text-align: right;width:20%;padding-top: 10px;padding-right:10px;">الادارة</th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    ">..</span></th>
+    <td colspan="3" style="text-align: center;    direction: ltr;">
+        <span t-esc="o.department_id.name" />
+    </td>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    ">..</span></th>
+      <th colspan="2" scope="colgroup" style="padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;border-top: none;text-align:left;padding-left:10px;width:20%;">Name</th>
+  </tr>
+  <tr>
+    <th scope="col" style="text-align: right;width:20%;padding-top: 10px;padding-right:10px;">المدير المباشر</th>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+   ">..</span></th>
+    <td colspan="3" style="text-align: center;    direction: ltr;">
+        <span t-esc="o.employee_id.parent_id.name" />
+    </td>
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+  ">..</span></th>
+      <th scope="col" style="text-align: left;width: 20%;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;width:20%">Direct Manager</th>
+
+  </tr>
+                    <tr>
+    <th scope="col" style="text-align: right;width: width:20%;padding-top: 10px;padding-right:10px;vertical-align:middle;">
+        تاكيد تاريخ مباشره العمل
+    </th>
+                        <th scope="col" style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+  ">..</span></th>
+    <td colspan="3" style="text-align: center;    direction: ltr;"></td>
+                        <th scope="col" style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    ">..</span></th>
+                        <th scope="col" style="text-align: left;width:20%;padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;padding-left:10px;">Confirm. Emp. Joining Date</th>
+  </tr>
+
+
+            <tr>
+                        <th colspan="4" scope="colgroup" style="border-left: 1px solid #fff;text-align: right;padding-right:10px;background-color:#c0c0c0;padding-top:5px;padding-bottom:5px;">تاكيد بيانات الموظف</th>
+    <th colspan="4" scope="colgroup" style="border-top: none;border-bottom: none;border-right:none;background-color:#e8e8e8;direction: ltr;text-align:left;padding-left:10px;padding-top:5px;padding-bottom:5px;">Approval:</th>
+                    </tr>
+
+  <tr>
+      <th scope="col" style="text-align: center;width: 150px;padding-top: 10px;">‬‬‬</th>
+
+      <th scope="col" style="text-align: center;width:50px;vertical-align:middle;padding-top:10px;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span>‫‬</th>
+    <th scope="col" style="text-align: left;padding-top: 10px;padding-left:10px;width: 100px;">Signature<br/><span style="font-family: 'Arial-BoldMT';">‫التوقيع‬</span>‬‬‬</th>
+
+    <td colspan="2" style="text-align: center;    direction: ltr;width:25% !important;">عبدالعزيز بن ثابت العسكر</td>
+      <th scope="col"  style="text-align: center;width:50px;vertical-align:middle;padding-top:10px;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span>‫‬</th>
+         <th colspan="2" scope="colgroup" style="padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;border-top: none;text-align:left;padding-left:10px;">Name<br/><span style="font-family: 'Arial-BoldMT';">اإلسم‬</span>‬</th>
+  </tr>
+  <tr>
+      <td scope="col"  style="text-align: center;padding-top: 10px;width: 150px;">‬‬‬<span style="padding-left: 40px;">/</span><span>/</span></td>
+
+     <th scope="col"  style="text-align: center;width:50px;vertical-align:middle;padding-top:10px;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span>‫‬</th>
+
+    <th scope="col"  style="text-align: left;padding-top: 10px;padding-left:10px;width: 100px;">Date<br/><span>‫التاريخ‬</span>‬‬‬</th>
+
+    <td colspan="2" style="text-align: center;    direction: ltr;width:25% !important;vertical-align:middle !important;">مدير الشئون الاداريه والماليه</td>
+       <th scope="col"  style="text-align: center;width:50px;vertical-align:middle;"><span style="text-align: center;vertical-align:middle;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;">..</span></th>
+      <th scope="col" style="padding-top: 10px;font-family: 'TimesNewRomanPSMT';font-weight:600;border-top: none;text-align:left;padding-left:10px;">Job Title <br/><span style="font-family: 'Arial-BoldMT';">‫الوظيفي‬ ‫المسمى‬</span></th>
+
+  </tr>
+
+
+
+</table>
+
+
+
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 2px;">
+            <div style="width:100%;">
+                <div class="c5">
+                    <h4 style="direction:ltr;">PLEASE RETURN COMPLETED FORM TO HR DEPARTMENT FOR PROCESSING‬‬</h4>
+                    <h4>الرجاء إعادة النموذج بعد‍ استكماله ل‍إدارة الموارد البشرية لا‍ستكمال الإجراءات </h4>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</t>
+</t>
+
+</template>
+
+        <template id="ncss_employee_information_template">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="1"/>
+                <t t-set="data_report_orientation" t-value="Landscape"/>
+                <t t-set="data_report_header_spacing" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="ncss_employee_templates.ncss_employee_information_docs"
+                       t-lang="request.env.user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

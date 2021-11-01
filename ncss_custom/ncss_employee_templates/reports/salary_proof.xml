@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <report
+                id="ncss_salary_proof_report"
+                string="التثبيت بالراتب"
+                model="hr.contract"
+                report_type="qweb-pdf"
+                file="ncss_employee_templates.ncss_salary_proof_report"
+                name="ncss_employee_templates.ncss_salary_proof_document"
+                />
+
+        <template id="ncss_salary_proof_template">
+<t t-call="web.internal_layout">
+<t t-foreach="docs" t-as="o">
+<style>
+@font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/ncss_employee_templates/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+    
+    @font-face {
+    font-family: 'Arial-ItalicMT';
+    font-style: italic;
+    src: local('Arial-ItalicMT'), local('Arial-ItalicMT'), url(/ncss_employee_templates/static/src/fonts/Arial-ItalicMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/ncss_employee_templates/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+    /*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/ncss_employee_templates/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/ncss_employee_templates/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+.ncss7 {
+    direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+    font-size: 26px;
+}
+
+</style>
+    
+    <div class="row ncss7">
+        
+        
+        
+        <div style="width:50%;text-align:right;margin-top:15px;">
+            <img src="/ncss_employee_templates/static/src/img/ncsslogo.png" />
+        </div>
+        
+        <div style="width:50%;text-align:left;direction:rtl;padding-top:120px;padding-left:25px;">
+            <div>
+                <span style="font-size:26px;">
+                    م<span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')"/>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="row ncss7" style="margin-top:45px;">
+        
+        
+        
+        <div style="width:50%;text-align:right;padding-right:45px;">
+            <span>السادة
+                <t t-if="o.direction_id">
+                    <span t-esc="o.direction_id.name" />
+                </t>
+                <t t-else="">
+                .................................
+                </t>
+
+                <span>المحترمين</span>
+            </span>
+        </div>
+        
+<!--        <div style="width:50%;text-align:left;direction:rtl;padding-left:25px;">-->
+<!--            <span>المحترمين</span>-->
+<!--        </div>-->
+        
+    </div>
+    
+    <div class="row ncss7" style="margin-top:15px;">
+        
+        
+        
+        <div style="width:100%;text-align:right;padding-right:45px;">
+            <span>السلام عليكم ورحمة الله وبركاته</span>
+        </div>
+        
+        
+        
+    </div>
+    
+    <div class="row ncss7" style="margin-top:15px;margin-bottom:30px;">
+        <div style="width:100%;padding-right:40px;text-align:right;">
+            
+            
+            <span style="font-size:23px;font-family: 'Arial-ItalicMT';">نشهد نحن المركز الوطني للدراسات والبحوث الاجتماعية بأذن الأستاذ/<span t-esc="o.employee_id.name" />بطاقة أحوال رقم: <span t-if='o.employee_id.identification_id' t-esc="o.employee_id.identification_id"/>، يعمل لدينا من تاريخ<span t-esc="o.date_start"/>م، بوظيفة (<span t-if='o.job_id' t-esc="o.job_id.name"/>) ولا يزال على راس العمل، ويتقاضى راتباً إجمالي قدره (<span t-esc="o.net_contract_salary"/>ريال) برقم حساب لديكم  </span><br/>
+            <span style="font-family: 'Arial-ItalicMT';font-size:23px;">(<span t-esc="o.employee_id.iban_number"/>)</span>
+            
+        </div>
+    </div>
+    
+    <div class="row ncss7" style="margin-top:15px;margin-bottom:30px;">
+        <div style="width:100%;padding-right:40px;text-align:right;">
+            
+            
+            <span style="font-size:23px;font-family: 'Arial-ItalicMT';">ونود إعلامكم بأننا نتعهد باستمرارية تحويل راتبه شهرياً لكم من تاريخ <span t-esc="o.date_start"/>م، ونتعهد بعدم التحويل لأي جهة أخرى او وقف هذا التحويل إلا بموافقتكم الخطية، ويعتبر هذا التحويل قائما ومستمراً طالما أن المذكور على رأس عمله ما لم يردنا اي اقتطاعات قضائية، وفي حال انتهاء عمله لدى المركز لأي سبب كان فإننا سنقوم بتحويل كامل مستحقاته المالية إن وجدت لصالحكم ، دون أدني مسؤولية تقع علينا تجاهكم </span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="row ncss7" style="margin-top:30px;text-align:right;">
+        <div style="width:100%;padding-right:120px;">
+            <span style="text-align:right;font-size:23px;font-family: 'Arial-ItalicMT';">* تم إصدار هذا الخطاب بناءً على طلب الموظف وبموافقته.</span><br/>
+            
+        </div>
+    </div>
+    
+    <div class="row ncss7" style="margin-top:20px;text-align:right;">
+        <div style="width:100%;padding-right:120px;">
+            
+            <span style="margin-top:30px;font-size:23px;font-family: 'Arial-ItalicMT';">وتقبلوا وافر التحية والتقدير</span>
+        </div>
+    </div>
+    
+    <div class="row ncss7" style="margin-top:30px;text-align:left;">
+        <div style="width:100%;padding-left:140px;">
+            <span style="font-size:23px;">رئيس وحدة المواردالبشرية</span>
+            
+        </div>
+    </div>
+    
+    <div class="row ncss7" style="margin-top:80px;text-align:left;">
+        <div style="width:100%;padding-left:140px;">
+            <span style="font-size:23px;">فراس بن عبدالرزاق الهاشم</span>
+            
+        </div>
+    </div>
+    
+    <div class="row ncss7" style="margin-top:15px;text-align:right;">
+        <div style="width:100%;padding-right:25px;">
+            <span style="font-size:18px;font-family: 'Arial-ItalicMT';">*  صورة للشؤون المالية</span>
+        </div>
+    </div>
+    
+    <div class="row ncss7" style="margin-top:0px;text-align:right;">
+        <div style="width:100%;padding-right:25px;">
+            <span style="font-size:18px;font-family: 'Arial-ItalicMT';">*  صورة للشؤون المالية</span>
+        </div>
+    </div>
+    
+    <div class="row ncss7" style="margin-top:0px;text-align:right;">
+        <div style="width:100%;padding-right:25px;">
+            <span style="font-size:18px;font-family: 'Arial-ItalicMT';">*  صورة للشؤون المالية</span>
+        </div>
+    </div>
+    
+    
+    <div class="footer" style="padding:0px;">
+        <img src="/ncss_employee_templates/static/src/img/footer.png" alt="" />
+    </div>
+
+</t>
+</t>
+
+</template>
+
+        <template id="ncss_salary_proof_document">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="1"/>
+                <t t-set="data_report_orientation" t-value="Landscape"/>
+                <t t-set="data_report_header_spacing" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="ncss_employee_templates.ncss_salary_proof_template"
+                       t-lang="request.env.user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

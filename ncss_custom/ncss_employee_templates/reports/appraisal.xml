@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="ncss_appraisal_report"
+                string="New personal employee Appraisal"
+                model="hr.contract"
+                report_type="qweb-pdf"
+                file="ncss_employee_templates.ncss_appraisal_report"
+                name="ncss_employee_templates.ncss_appraisal_employee_templates"
+                />
+
+        <template id="ncss_appraisal_employee_docs">
+<t t-call="web.internal_layout">
+<t t-foreach="docs" t-as="o">
+
+  <div class="page container ncss3">
+      <style>
+          @font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/ncss_employee_templates/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/ncss_employee_templates/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+/*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/ncss_employee_templates/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/ncss_employee_templates/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+
+.ncss3 {
+direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+
+}
+
+.ncss3 .c1
+{
+    background-color: lightblue;
+    text-align: center;
+}
+
+.ncss3 .c1 h4
+{
+    font-size: 18px;
+}
+
+.ncss3 .c2
+{
+    background-color: #2a9999;
+    text-align: center;
+    margin-top: -8px !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.ncss3 .c2 h4
+{
+    font-size: 23px;
+    font-family: 'Arial-BoldMT';
+}
+
+.ncss3 .c3
+{
+/*    margin-top: 35px;*/
+    text-align: center;
+}
+
+.ncss3 .c3 h4
+{
+    font-size: 23px;
+}
+
+.ncss3 .c5
+{
+/*    margin-top: 35px;*/
+    text-align: center;
+    border: 1px solid;
+    padding-top: 5px;
+}
+
+.ncss3 .c5 h4
+{
+    font-size: 20px;
+}
+
+
+.ncss3 .c4 .table-bordered td{
+    border: 1px solid #aeaeae;
+    font-size:18px;
+    padding-top:0px !important;
+          padding-bottom: 0px !important;
+          color: #7a7a7a !important;
+}
+
+.ncss3 .c4 .table-bordered th
+{
+    border: 1px solid #aeaeae;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 18px;
+          vertical-align:middle;
+          color: #7a7a7a !important;
+}
+
+
+.vertical-header span,
+.vertical-header {
+  white-space: nowrap !important;
+  writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    -webkit-transform: rotate(0.5turn) !important;
+}
+
+.vertical-header2 span,
+.vertical-header2 {
+  white-space: nowrap !important;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+    transform: rotate(1turn) !important;
+}
+
+
+
+       .ncss3 input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+            border: 1px solid #aeaeae;
+}
+
+.ncss3 input[type="checkbox"]:checked {
+  background-color: green;
+}
+          .ncss3 hr.new1 {
+  border-top: 1px dashed #aeaeae;
+    width: 950px;
+}
+      </style>
+
+      <div class="row">
+
+              <div style="width:100%;margin-top: 5px;text-align: center;">
+            <img src="/ncss_employee_templates/static/src/img/ncsslogo.png" />
+          </div>
+
+        </div>
+
+      <div class="row" style="margin-top: 10px;">
+            <div style="width:100%;text-align: center;">
+                <div>
+                    <h4 style="padding:10px;background-color: #1c2c5f;font-size:26px !important;display: inline-block;color:#fff;">الشؤون المالية والإدارية</h4>
+                    <div>
+                        <h4 style="padding:10px;background-color: #ee8323;font-size:20px !important;display: inline-block;direction:ltr;color:#fff;">FINANCIAL AND ADMINISTRATIVE AFFAIRS‬‬</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="padding:10px;background-color: #1c2c5f;font-size:26px !important;display: inline-block;color:#fff;">إدارة الموارد البشرية</h4>
+                    <div>
+                        <h4 style="padding:10px;background-color: #ee8323;font-size:20px !important;display: inline-block;direction:ltr;color:#fff;">HR. AND ADMINISTRATIVE DEPARTMENT‬‬</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row c4" style="margin-top:30px;">
+            <div class="col-lg-12">
+
+                <table class="table table-bordered" style="margin-top: 15px;">
+  <col/>
+  <colgroup span="2"></colgroup>
+  <colgroup span="2"></colgroup>
+                    <tr><th style="width: 50px !important;max-width:50px !important;text-align: center;" rowspan="30" class="vertical-header2"><span style="padding-top:200px !important;">بيانات الموظف
+التوظيف</span></th></tr>
+                    <tr>
+                        <th colspan="3" scope="colgroup" style="border-left: none;border-right: none;text-align: right;padding-right:10px;padding-top:10px;padding-bottom:10px;background-color: #ee8323;color:#fff !important;font-size:20px !important;">   نـمــوذج تقييم الأداء لشاغلي الوظائف الإشرافيه</th>
+    <th colspan="5" scope="colgroup" style="border-bottom: none;border-right:none;direction: ltr;padding-top:10px;padding-bottom:10px;text-align:left;padding-left:10px;background-color: #1c2c5f;font-size:18px;!important;color:#fff !important;">Employee's Performance Evaluation(Supervisory)</th>
+                        <th style="width: 50px !important;max-width:50px !important;text-align: center;" rowspan="30" class="vertical-header2"><span style="padding-top:200px !important;">CONCERNED DEPARTMENT</span></th>
+                    </tr>
+
+                    <tr>
+                        <th colspan="3" scope="colgroup" style="border-left: none;border-right: none;text-align: right;padding-right:10px;padding-top:5px;padding-bottom:5px;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;">بيانات الموظف</th>
+    <th colspan="5" scope="colgroup" style="border-bottom: none;border-right:none;direction: ltr;padding-top:5px;padding-bottom:5px;text-align:left;padding-left:10px;background-color:#e8e8e8;font-size:20px;!important;">Emp. Details:</th>
+                    </tr>
+
+  <tr>
+    <th colspan="1" style="text-align: center;padding-right:10px;width:15% !important;background-color:#e8e8e8;">الاسم</th>
+      <th colspan="1" style="text-align: right;width:50px;background-color:#e8e8e8;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+    <td colspan="1" style="text-align: center;    direction: rtl;width:300px !important;">
+        <span t-esc="o.employee_id.name" />
+    </td>
+      <th colspan="1" style="font-family: 'Arial-BoldMT' !important;font-weight:600;text-align:center;padding-left:10px;width:15%;background-color:#e8e8e8;">الرقم الوظيفي</th>
+      <th colspan="1" style="text-align: right;width:50px;background-color:#e8e8e8;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+        <td colspan="2" style="text-align: center;    direction: rtl;">
+            <span t-esc="o.employee_id.employee_code" />
+        </td>
+
+  </tr>
+   <tr>
+    <th colspan="1" style="text-align: center;padding-right:10px;width:15% !important;background-color:#e8e8e8;">المسمس الوظيفي</th>
+      <th colspan="1" style="text-align: right;width:50px;background-color:#e8e8e8;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+    <td colspan="1" style="text-align: center;    direction: rtl;width:300px !important;">
+        <span t-if="o.job_id" t-esc="o.job_id.name" />
+    </td>
+      <th colspan="1" style="font-family: 'Arial-BoldMT' !important;font-weight:600;border-top: none;text-align:center;padding-left:10px;width:15%;background-color:#e8e8e8;">الاداره</th>
+      <th colspan="1" style="text-align: right;width:50px;background-color:#e8e8e8;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+        <td colspan="2" style="text-align: center;    direction: rtl;">
+            <span t-if="o.department_id" t-esc="o.department_id.name" />
+        </td>
+
+  </tr>
+                    <tr>
+    <th colspan="1" style="text-align: center;padding-right:10px;width:15% !important;background-color:#e8e8e8;">‫للفترة‬‬‬‬</th>
+      <th colspan="1" style="text-align: right;width:50px;background-color:#e8e8e8;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+    <td colspan="6" style="text-align: center;    direction: rtl;">
+
+    </td>
+
+
+
+
+  </tr>
+
+
+                    <tr>
+                        <th colspan="3" scope="colgroup" style="border-left: none;text-align: right;padding-right:10px;padding-top:5px;padding-bottom:5px;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;">عناصر التقييم</th>
+    <th colspan="5" scope="colgroup" style="border-top: none;border-bottom: none;border-right:none;direction: ltr;padding-top:5px;padding-bottom:5px;text-align:left;padding-left:10px;background-color:#e8e8e8;font-size:20px !important;">Evaluation Items</th>
+                    </tr>
+            <tr style="text-align: center;">
+                    <th style="width:5% !important;padding-top: 5px;color:#000 !important;">‫مسلسل‬</th>
+                <th colspan="2" style="padding-top:5px;color:#000 !important;width:40%;">معايير التقييم</th>
+                <th colspan="2" style="width: 80px !important;padding-top: 5px;color:#000 !important;">درجه التقييم
+القصوى</th>
+                <th style="width:130px !important;padding-top: 5px;color:#000 !important;">الدرجة
+المستحقة</th>
+                <th style="width:100px !important;padding-top: 5px;color:#000 !important;">المستوى</th>
+                    </tr>
+
+                     <tr style="text-align: center;">
+                        <td>1</td>
+                         <td colspan="2">القدره علي القيام بمسئوليات الوظيفه</td>
+                         <td colspan="2" style="width: 150px !important;">30</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td>2</td>
+                         <td colspan="2">الالتزام بالنظمه واللوائح والقواعد</td>
+                         <td colspan="2" style="width: 150px !important;">20</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td>3</td>
+                         <td colspan="2">المهارات التى يملكها</td>
+                         <td colspan="2" style="width: 150px !important;">20</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td>4</td>
+                         <td colspan="2">انجاز المهام</td>
+                         <td colspan="2" style="width: 150px !important;">20</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td>5</td>
+                         <td colspan="2">المزايا الشخصيه</td>
+                         <td colspan="2" style="width: 150px !important;">15</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td>6</td>
+                         <td colspan="2">الانظباط بالعمل</td>
+                         <td colspan="2" style="width: 150px !important;">15</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td>7</td>
+                         <td colspan="2">علاقته بالمركز</td>
+                         <td colspan="2" style="width: 150px !important;">15</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td>8</td>
+                         <td colspan="2">الانظباط</td>
+                         <td colspan="2" style="width: 150px !important;">15</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+
+                         <td colspan="3">المجموع</td>
+                         <td colspan="2" style="width: 150px !important;">150</td>
+                         <td></td>
+                         <td></td>
+                    </tr>
+
+                     <tr>
+                        <th colspan="3" scope="colgroup" style="border-left: none;text-align: right;padding-right:10px;padding-top:5px;padding-bottom:5px;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;">‫التقييم‬ ‫معايير‬‬</th>
+    <th colspan="5" scope="colgroup" style="border-top: none;border-bottom: none;border-right:none;direction: ltr;padding-top:5px;padding-bottom:5px;text-align:left;padding-left:10px;background-color:#e8e8e8;font-size:20px !important;">General Evaluation Criteria</th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3" style="font-size:20px !important;color:#000 !important;border-bottom:2px solid #aeaeae;">المستوى</th>
+                        <th colspan="5" style="font-size:20px !important;color:#000 !important;border-bottom:2px solid #aeaeae;">الدرجه من النسبه</th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">ممتاز/متميز</th>
+                        <th colspan="5">90% فاكثر</th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">عالي / جيد جدا</th>
+                        <th colspan="5">من 75 الي 89 %</th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">جيد</th>
+                        <th colspan="5">من 65 الي 75 %</th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">مقبول</th>
+                        <th colspan="5">من 50 الى 65 %</th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">ضعيف</th>
+                        <th colspan="5">اقل من 50 %</th>
+                    </tr>
+
+                    <tr>
+                        <th colspan="3" scope="colgroup" style="border-left: none;text-align: right;padding-right:10px;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;padding-top:5px;padding-bottom:5px;">نقاط القوه والضعف فى اداء الموظف</th>
+    <th colspan="5" scope="colgroup" style="border-top: none;border-bottom: none;border-right:none;direction: ltr;background-color:#e8e8e8;text-align:left;padding-left:10px;font-size:19px !important;padding-top:5px;padding-bottom:5px;width:60%;">Strengths 	&amp; weakness in employee performance</th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                    <th colspan="3" style="font-size:20px !important;">نقاط القوة فى اداء الموظف</th>
+                        <th colspan="5" style="font-size:20px !important;">نقاط الضعف فى اداء الموظف</th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td colspan="1" style="width:100px;">1</td>
+                        <td colspan="2"></td>
+                        <td colspan="1" style="width:5% !important;max-width:5% !important;">1</td>
+                        <td colspan="4"></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td colspan="1" style="width:100px;">2</td>
+                        <td colspan="2"></td>
+                        <td colspan="1" style="width:5% !important;max-width:5% !important;">2</td>
+                        <td colspan="4"></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td colspan="1" style="width:100px;">3</td>
+                        <td colspan="2"></td>
+                        <td colspan="1" style="width:5% !important;max-width:5% !important;">3</td>
+                        <td colspan="4"></td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td colspan="1" style="width:100px;">4</td>
+                        <td colspan="2"></td>
+                        <td colspan="1" style="width:5% !important;max-width:5% !important;">4</td>
+                        <td colspan="4"></td>
+                    </tr>
+
+
+</table>
+
+
+
+
+
+            </div>
+        </div>
+
+      <div class="row" style="margin-top:150px !important;">
+
+              <div style="width:100%;margin-top: 5px;text-align: center;">
+            <img src="/ncss_employee_templates/static/src/img/ncsslogo.png" />
+          </div>
+
+
+        </div>
+
+       <div class="row" style="margin-top: 10px;">
+            <div style="width:100%;text-align: center;">
+                <div>
+                    <h4 style="padding:10px;background-color: #1c2c5f;font-size:26px !important;display: inline-block;color:#fff;">الشؤون المالية والإدارية</h4>
+                    <div>
+                        <h4 style="padding:10px;background-color: #ee8323;font-size:20px !important;display: inline-block;direction:ltr;color:#fff;">FINANCIAL AND ADMINISTRATIVE AFFAIRS‬‬</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="padding:10px;background-color: #1c2c5f;font-size:26px !important;display: inline-block;color:#fff;">إدارة الموارد البشرية</h4>
+                    <div>
+                        <h4 style="padding:10px;background-color: #ee8323;font-size:20px !important;display: inline-block;direction:ltr;color:#fff;">HR. AND ADMINISTRATIVE DEPARTMENT‬‬</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+      <div class="row c4" style="margin-top:35px;">
+            <div >
+
+                <table class="table table-bordered" style="margin-top: 15px;">
+  <col/>
+  <colgroup span="2"></colgroup>
+  <colgroup span="2"></colgroup>
+                    <tr><th style="width: 50px !important;max-width:50px !important;border-top: 1px soild #aeaeae !important;border-right: 1px solid #aeaeae !important;" rowspan="11" class="vertical-header2"><span style="padding-top: 0px !important;">الإدارة المعنية</span></th></tr>
+                    <tr>
+                        <th colspan="4" scope="colgroup" style="text-align: right;padding-right:10px;padding-top:5px;padding-bottom:5px;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;">توصيات المدير المباشر</th>
+    <th colspan="4" scope="colgroup" style="direction: ltr;width:120px;text-align:left;padding-left:10px;padding-top:5px;padding-bottom:5px;background-color:#e8e8e8;font-size:20px !important;">Recommendations of Direct Manager</th>
+                        <th style="padding-bottom:50px;width: 50px !important;max-width:50px !important;border-left: 1px solid #aeaeae !important;border-top: 1px solid #aeaeae !important;border-bottom: 1px solid #aeaeae !important;text-align:center !important;" rowspan="9" class="vertical-header"><span>CONCERNED DEPARTMENT</span></th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">
+                        التوصيات
+                        </th>
+
+                        <th colspan="2">
+                        نعم
+                        </th>
+
+                        <th colspan="2">
+                        لا
+                        </th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">نوصي بزياده سنويه</th>
+                        <th colspan="2"><input type="checkbox" name="" value=""/></th>
+                        <th colspan="2"><input type="checkbox" name="" value=""/></th>
+                    </tr>
+
+<!--                    <tr style="text-align: center;background-color: #deeaf6;">-->
+<!--                        <th colspan="3">‫سنوية‬ ‫بزيادة‬ ‫نوصي‬</th>-->
+<!--                        <th colspan="2"><input type="checkbox" name="" value=""/></th>-->
+<!--                        <th colspan="2"><input type="checkbox" name="" value=""/></th>-->
+<!--                    </tr>-->
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">يعاد تقييم الموظف بعد شهر</th>
+                        <th colspan="2"><input type="checkbox" name="" value=""/></th>
+                        <th colspan="2"><input type="checkbox" name="" value=""/></th>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <th colspan="3">يجدد عقد الموظف مع السبب</th>
+                        <th colspan="2"><input type="checkbox" name="" value=""/></th>
+                        <th colspan="2"><input type="checkbox" name="" value=""/></th>
+                    </tr>
+
+                    <tr style="text-align: right;">
+                        <th colspan="8" style="padding-top: 10px;text-align:right;padding-right:10px;">‫‪:‬‬ ‫أخرى‬<br/><hr class="new1" /><hr class="new1" /><hr class="new1" /><hr class="new1" /></th>
+
+                    </tr>
+
+
+
+                    <tr>
+                        <th colspan="4" scope="colgroup" style="border-left: none;text-align: right;padding-right:10px;padding-top:5px;padding-bottom:5px;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;">اعتماد المدير المباشر</th>
+    <th colspan="4" scope="colgroup" style="border-top: none;border-bottom: none;border-right:none;direction: ltr;text-align:left;padding-left:10px;padding-top:5px;padding-bottom:5px;background-color:#e8e8e8;font-size:20px !important;">Signature of Direct Manager</th>
+                    </tr>
+            <tr>
+    <th colspan="1" style="text-align: center;padding-top: 10px;width: 150px;">الاسم</th>
+      <th colspan="1" style="text-align: right;width:50px;"><span style="text-align: center;vertical-align:middle;padding-top: 30px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬‫‬</th>
+    <td colspan="2" style="text-align: center;    direction: ltr;width: 80px;"></td>
+      <th colspan="1" style="padding-top: 10px;font-family: 'Arial-BoldMT' !important;font-weight:600;text-align:center;width: 220px;">‫التاريخ‬‬</th>
+      <th colspan="1" style="text-align: right;width:50px;"><span style="text-align: center;vertical-align:middle;padding-top: 30px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+        <td colspan="2" style="text-align: center;    direction: ltr;width:70px;"></td>
+
+  </tr>
+
+                    <tr>
+    <th colspan="1" style="text-align: center;padding-top: 10px;width: 150px;">المسمي  الوظيفي</th>
+      <th colspan="1" style="text-align: right;width:50px;"><span style="text-align: center;vertical-align:middle;padding-top: 30px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+    <td colspan="2" style="text-align: center;    direction: ltr;width: 80px;"></td>
+      <th colspan="1" style="padding-top: 10px;font-family: 'Arial-BoldMT' !important;font-weight:600;border-top: none;text-align:center;width: 220px;">‫التوقيع‬‬‬</th>
+      <th colspan="1" style="text-align: right;width:50px;"><span style="text-align: center;vertical-align:middle;padding-top: 30px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬‫‬</th>
+        <td colspan="2" style="text-align: center;    direction: ltr;width:70px;"></td>
+
+  </tr>
+
+
+
+</table>
+               <table class="table table-bordered" style="margin-top: -16px;">
+
+
+                    <tr><th style="width: 50px !important;max-width:50px !important;padding-top: 20px;border-right: 1px solid #aeaeae !important;" rowspan="8" class="vertical-header2"><span>الموظف</span></th></tr>
+                    <tr>
+                        <th colspan="4" style="text-align: right;padding-right:10px;padding-top: 5px;padding-bottom:5px;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;">توقيع الموظف</th>
+    <th colspan="4" style="border-right:none;direction: ltr;padding-top: 5px;padding-bottom:5px;width: 128px;text-align:left;padding-left:10px;background-color:#e8e8e8;font-size:20px !important;">Employee Signature</th>
+                        <th style="width: 50px !important;max-width:50px !important;border-left: 1px solid #aeaeae !important;" rowspan="8" class="vertical-header"><span>EMPLOYEE</span></th>
+                    </tr>
+
+                   <tr style="text-align: right;">
+                    <th colspan="8" style="height: 100px;"></th>
+                   </tr>
+
+
+                </table>
+
+
+                <table class="table table-bordered" style="margin-top: -16px;">
+
+
+                    <tr><th style="width: 50px !important;max-width:50px !important;padding-top: 20px;border-right: 1px solid #aeaeae !important;" rowspan="8" class="vertical-header2"><span>الموارد البشرية</span></th></tr>
+                    <tr>
+                        <th colspan="4" style="text-align: right;padding-right:10px;padding-top: 5px;padding-bottom:5px;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;width:49% !important;">اعتماد وحده الموارد البشريه</th>
+    <th colspan="4" style="border-right:none;direction: ltr;padding-top: 5px;padding-bottom:5px;text-align:left;padding-left:10px;background-color:#e8e8e8;font-size:20px !important;width: 51% !important;">Signature of HR Department</th>
+                        <th style="width: 50px !important;max-width:50px !important;border-left: 1px solid #aeaeae !important;" rowspan="8" class="vertical-header"><span>HR</span></th>
+                    </tr>
+
+
+                    <tr>
+    <th colspan="1" style="text-align: center;padding-top: 10px;padding-right:10px;width: 150px;">الاسم</th>
+      <th colspan="1" style="text-align: right;width:50px;"><span style="text-align: center;vertical-align:middle;padding-top: 30px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+    <td colspan="2" style="text-align: center;    direction: ltr;width: 25%;"></td>
+      <th colspan="1" style="padding-top: 10px;font-family: 'Arial-BoldMT' !important;font-weight:600;border-top: none;text-align:center;padding-left:10px;width: 220px;">‬‬‬‬</th>
+      <th colspan="1" style="text-align: right;width:50px;"><span style="text-align: center;vertical-align:middle;padding-top: 30px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+        <td colspan="2" style="text-align: center;    direction: ltr;width: 25%;"></td>
+
+  </tr>
+
+
+                    <tr>
+    <th colspan="1" style="text-align: center;padding-top: 10px;padding-right:10px;width: 150px;">المسمي الوظيفي</th>
+      <th colspan="1" style="text-align: right;width:50px;"><span style="text-align: center;vertical-align:middle;padding-top: 30px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬‫‬</th>
+    <td colspan="2" style="text-align: center;    direction: ltr;width: 25%;"></td>
+      <th colspan="1" style="padding-top: 10px;font-family: 'Arial-BoldMT' !important;font-weight:600;border-top: none;text-align:center;padding-left:10px;width: 220px;">‬‬‬</th>
+      <th colspan="1" style="text-align: right;width:50px;"><span style="text-align: center;vertical-align:middle;padding-top: 30px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬‫‬</th>
+        <td colspan="2" style="text-align: center;    direction: ltr;width: 25%;"></td>
+
+  </tr>
+
+
+                </table>
+
+                <table class="table table-bordered" style="margin-top: -15px;">
+
+
+                    <tr><th style="width: 50px !important;max-width:50px !important;padding-top: 20px;border-right: 1px solid #aeaeae !important;border-bottom: 1px solid #aeaeae !important;" rowspan="8" class="vertical-header2"><span>الموافقة</span></th></tr>
+                    <tr>
+                        <th colspan="4" style="text-align: right;padding-right:10px;padding-top: 5px;padding-bottom:5px;width: 135px !important;background-color:#c0c0c0;color:#000 !important;font-size:21px !important;">توقيع الموظف</th>
+    <th colspan="4" style="border-right:none;direction: ltr;padding-top: 5px;padding-bottom:5px;width: 90px !important;text-align:left;padding-left:10px;background-color:#e8e8e8;font-size:20px !important;">APPROVAL:</th>
+                        <th style="width: 50px !important;max-width:50px !important;border-left: 1px solid #aeaeae !important;border-bottom: 1px solid #aeaeae !important;" rowspan="8" class="vertical-header"><span>APPROVAL</span></th>
+                    </tr>
+                   
+                   <tr style="text-align: right;">
+                    <th colspan="8" style="height: 150px;"></th>
+                   </tr>
+                   
+                
+                </table>
+                
+                
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+</t>
+</t>
+
+</template>
+
+        <template id="ncss_appraisal_employee_templates">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="1"/>
+                <t t-set="data_report_orientation" t-value="Landscape"/>
+                <t t-set="data_report_header_spacing" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="ncss_employee_templates.ncss_appraisal_employee_docs"
+                       t-lang="request.env.user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

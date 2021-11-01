@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'NCSS Employee Templates',
+    'summary': 'NCSS Employee Templates',
+    'version': '0.13',
+    'license': "AGPL-3",
+    'author': 'Telenoc, Magdy',
+    'category': 'Employee',
+    'depends': ['hr_contract'],
+    'website': 'http://www.telenoc.org',
+    'data': [
+        # 'data/',
+        
+        # 'security/',
+        # 'security/ir.model.access.csv',
+        # 'views/account_journal_view_changes.xml',
+        # 'views/account_move_view_changes.xml',
+        # 'views/res_config_settings_view_changes.xml',
+        # 'reports/reports.xml',
+        # 'reports/electricity.xml',
+        # 'reports/emergency_report.xml',
+        # 'reports/employee_invoice_template.xml',
+        # 'reports/construction_invoice_template.xml',
+        # 'reports/jazan_invoice.xml',
+        # 'reports/quoraa_jaddah.xml',
+        # 'reports/quoraa_jazan.xml',
+        'reports/employee_information.xml',
+        'reports/employment_certificate.xml',
+        'reports/appraisal.xml',
+        'reports/personal_meeting.xml',
+        'reports/work_contract.xml',
+        'reports/salary_information.xml',
+        'reports/salary_proof.xml',
+        'reports/assets.xml',
+
+    ],
+
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}

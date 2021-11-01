@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <report
+                id="ncss_salary_information_report"
+                string="التعريف بالراتب"
+                model="hr.contract"
+                report_type="qweb-pdf"
+                file="ncss_employee_templates.ncss_salary_information_report"
+                name="ncss_employee_templates.ncss_salary_information_document"
+                />
+
+        <template id="ncss_salary_information_template">
+<t t-call="web.internal_layout">
+<t t-foreach="docs" t-as="o">
+<style>
+@font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/ncss_employee_templates/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/ncss_employee_templates/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+    /*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/ncss_employee_templates/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/ncss_employee_templates/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+.ncss6 {
+    direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+    font-size: 26px;
+}
+table{
+	direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+    font-size: 26px;
+}
+.t_header {
+    width: 100%;
+    border-collapse: collapse;
+    direction: rtl;
+}
+
+.t_header td {
+    width: 50% !important;
+}
+
+.table_values {
+    width: 80%;
+    border: 1px solid #000000;
+    direction: rtl;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table_values th {
+    background-color: gray;
+    border: 1px solid #000000;
+    padding: 10px 0;
+}
+
+.table_values td {
+    width: 50%;
+    border: 1px solid #000000;
+    padding: 10px 0;
+}
+</style>
+    
+    <div class="row ncss6">
+        
+        
+        
+        <div style="width:50%;text-align:right;margin-top:15px;">
+            <img src="/ncss_employee_templates/static/src/img/ncsslogo.png" />
+        </div>
+        
+        <div style="width:50%;text-align:left;direction:rtl;padding-top:120px;padding-left:25px;">
+            <div>
+                <span style="font-size:26px;">
+                    م<span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')"/>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="row ncss6" style="margin-top:45px;">
+        
+        
+        
+        <div style="width:50%;text-align:right;padding-right:45px;">
+            <span>السادة
+                <t t-if="o.direction_id">
+                    <span t-esc="o.direction_id.name" />
+                </t>
+                <t t-else="">
+                .................................
+                </t>
+
+                <span>المحترمين</span>
+            </span>
+        </div>
+        
+<!--        <div style="width:50%;text-align:left;direction:rtl;padding-left:25px;">-->
+<!--            <span>المحترمين</span>-->
+<!--        </div>-->
+        
+    </div>
+    
+    <div class="row ncss6" style="margin-top:15px;">
+        
+        
+        
+        <div style="width:50%;text-align:right;padding-right:45px;">
+            <span>السلام عليكم ورحمة الله وبركاته</span>
+        </div>
+        
+        <div style="width:50%;text-align:left;direction:rtl;padding-left:100px;">
+            <span>وبعد</span>
+        </div>
+        
+    </div>
+    
+    <div class="row ncss6" style="margin-top:15px;margin-bottom:30px;">
+        <div style="width:100%;padding-right:40px;text-align:right;">
+            
+            
+            <span style="font-size:26px;">نفيدكم أن الأستاذ : <span t-esc="o.employee_id.name" />، بطاقة أحوال رقم <span t-if='o.employee_id.identification_id' t-esc="o.employee_id.identification_id"/> صادرة من</span><br/>
+            <span> <span t-if='o.employee_id.country_id' t-esc="o.employee_id.country_id.name"/>، يعمل لدينا بوظيف(<span t-if='o.job_id' t-esc="o.job_id.name"/>) منذ تاريخ <span t-esc="o.date_start"/>م<br/>
+                 براتب اجمالي قدرة</span>
+            <span><span t-esc="o.net_contract_salary"/>ريال، حسب البيان التالي</span>
+        </div>
+    </div>
+    
+
+    <table class="table_values">
+        <tr>
+            <th style="background:#0a4776;color:#ffffff;">البيان</th>
+            <th style="background:#0a4776;color:#ffffff;">المبلع</th>
+        </tr>
+        <tr>
+            <td>الراتب الأساسي</td>
+            <td><span t-esc="o.wage"/>ريال</td>
+        </tr>
+        <tr>
+            <td>بدل سكن</td>
+            <td><span t-esc="o.home_allowance"/>ريال</td>
+        </tr>
+        <tr>
+            <td>بدل نقل</td>
+            <td><span t-esc="o.transportation_allowance"/>ريال</td>
+        </tr>
+    </table>
+    
+    <div class="row ncss6" style="margin-top:30px;text-align:right;">
+        <div style="width:100%;padding-right:120px;">
+            <span style="text-align:right;">ولطلبه أعطي هذاء التعريف، دون أدني مسؤولية على المركز .</span><br/>
+            
+        </div>
+    </div>
+    
+    <div class="row ncss6" style="margin-top:20px;text-align:right;">
+        <div style="width:100%;padding-right:120px;">
+            
+            <span style="margin-top:30px;">وتفضلوا بقبول فائق التحية والتقدير</span>
+        </div>
+    </div>
+    
+    <div class="row ncss6" style="margin-top:40px;text-align:left;">
+        <div style="width:100%;padding-left:140px;">
+            <span>رئيس وحدة المواردالبشرية</span>
+            
+        </div>
+    </div>
+    
+    <div class="row ncss6" style="margin-top:90px;text-align:left;">
+        <div style="width:100%;padding-left:140px;">
+            <span>فراس بن عبدالرزاق الهاشم</span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer" style="padding:0px;">
+        <img src="/ncss_employee_templates/static/src/img/footer.png" alt="" />
+    </div>
+
+</t>
+</t>
+
+</template>
+
+        <template id="ncss_salary_information_document">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="1"/>
+                <t t-set="data_report_orientation" t-value="Landscape"/>
+                <t t-set="data_report_header_spacing" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="ncss_employee_templates.ncss_salary_information_template"
+                       t-lang="request.env.user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

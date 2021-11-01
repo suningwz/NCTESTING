@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+            id="report_employee_certificate"
+            string="New Print Employee Certificate"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="ncss_employee_templates.report_employee_certificate"
+            name="ncss_employee_templates.ncss_employee_certificate_template"
+        />
+
+        <template id="report_empoyee_certificate_docs">
+            <t t-call="web.internal_layout">
+                <t t-foreach="docs" t-as="o">
+
+                    <div class="page container ncss1">
+
+                        <style>
+                            @font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/ncss_employee_templates/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/ncss_employee_templates/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+/*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/ncss_employee_templates/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/ncss_employee_templates/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+
+.ncss1 {
+direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+
+}
+
+                            .ncss1 .c3 .table-bordered td{
+    border: 1px solid #aeaeae !important;
+    font-size: 20px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+     vertical-align: middle !important;
+}
+
+.ncss1 .c3 .table-bordered th
+{
+    border: 1px solid #aeaeae !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    font-size: 20px;
+    vertical-align: middle !important;
+}
+
+
+
+
+                        </style>
+                          <div class="row">
+                                <div style="text-align: center;padding-top: 50px;width:100%;">
+                                    <img src="/ncss_employee_templates/static/src/img/ncsslogo.png" />
+                                    <div class="title">
+                                        <h4 style="font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    font-size: 23px;
+    background-color: #1c2c5f;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    text-align:center !important;">شهادة خدمة</h4>
+                                        <div>
+                    <h4 style="font-size: 23px;
+    background-color: #ee8323;
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #fff;text-align:center !important;">Employment certificate</h4>
+                </div>
+                                    </div>
+                                </div>
+                          </div>
+
+                          <div class="row" style="margin-top: 35px;">
+                               <div style="width:50%;">
+                                    <div class="c1">
+                                        <p style="border: 1px solid #aeaeae;
+    margin-left: 150px;
+    padding: 5px;
+    line-height: 30px;
+    padding-right: 10px;
+    text-align: right;font-size:20px;">إلى من يهمة الأمر <br/>نحيطكم علماً بأن</p>
+                                    </div>
+                                    <div>
+                                        <p
+                                             style="text-align: right;
+    padding-right: 10px;
+    margin-top: 8px;
+    font-weight: 100 !important;
+    border: 1px solid #aeaeae;
+    font-size: 20px;
+    margin-left: 150px;" t-esc="o.employee_id.name">
+                                        </p>
+                                    </div>
+                               </div>
+
+                                <div style="width:50%;">
+                                    <div class="c2">
+                                        <p style="text-align:left; border: 1px solid #aeaeae;
+    margin-right: 150px;
+    padding: 5px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-family: 'TimesNewRomanPSMT';font-size:20px;">To whom it may concern<br/>This is to certify that
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <p style="text-align:left;margin-top: 8px;
+    margin-right: 150px;
+    padding-left: 10px;
+    border: 1px solid #aeaeae;
+    font-size: 20px;" t-esc="o.employee_id.name" >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 15px;">
+                                <div style="width:50%;">
+                                    <div class="c1" >
+                                        <p style="border: 1px solid #aeaeae;
+    margin-left: 150px;
+    padding: 5px;
+    line-height: 30px;
+    padding-right: 10px;
+    text-align: right;direction:rtl;font-size:20px;">
+                                             من العاملين بالمركزالوطني
+للدراسات والبحوث الاجتماعية–
+الرياض,المملكةالعربية
+السعودية.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <div style="width:50%;">
+                                    <div class="c2">
+                                        <p style="direction: ltr;border: 1px solid #aeaeae;
+    margin-right: 150px;
+    padding: 5px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-family: 'TimesNewRomanPSMT';text-align:left;font-size:20px;">Work for National Center For
+                                            Social Studies, Riyadh-Kingdom of
+                                            Saudi Arabia.
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row c3" style="margin-top: 15px;">
+                                   <div>
+                                     <table class="table table-bordered" style="border: 1px solid #aeaeae !important;">
+                                          <col/>
+                                          <colgroup span="2"></colgroup>
+                                          <colgroup span="2"></colgroup>
+
+                                          <tr>
+                                            <th scope="col" style="text-align: right;width: 200px;background-color: #1c2c5f;color: #fff;border-bottom: 1px solid #aeaeae;padding-top: 10px;    padding-right: 10px;vertical-align: middle !important;">بوظيفة</th>
+                                             <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                            <th colspan="2" scope="colgroup" style="text-align: center;padding-top: 10px;font-size:16px !important;width:300px !important;vertical-align: middle !important;border:1px solid #aeaeae;"><span t-esc="o.job_id.name" /></th>
+                                            <th colspan="1" scope="colgroup" style="text-align: center;padding-top: 10px;font-size:16px !important;width:150px !important;vertical-align: middle !important;border:1px solid #aeaeae;"><span t-esc="o.job_id.name" /></th>
+                                               <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                              <th colspan="2" scope="colgroup" style="background-color: #1c2c5f;border-bottom: 1px solid #aeaeae;padding-top: 10px;font-family: 'timesnewromanps-boldmt';text-align: left;padding-left: 10px;color: #fff;vertical-align: middle !important;">Job Title</th>
+                                          </tr>
+                                          <tr>
+                                            <th scope="col" style="text-align: right;width: 200px;background-color: #1c2c5f;border-bottom: 1px solid #aeaeae;padding-top: 10px;padding-right: 10px;color: #fff;vertical-align: middle !important;">تاريخ التعيين‬</th>
+                                              <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                            <td colspan="3" style="text-align: center;    direction: ltr;font-size:20px !important;vertical-align: middle !important;border:1px solid #aeaeae;"><span t-esc="o.date_start" /></td>
+                                              <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                              <th scope="col" style="text-align: left;width: 200px;background-color: #1c2c5f;    border-bottom: 1px solid #aeaeae;padding-top: 10px;font-family: 'timesnewromanps-boldmt';padding-left: 10px;color: #fff;vertical-align: middle !important;">From</th>
+
+                                          </tr>
+                                                            <tr>
+                                            <th scope="col" style="text-align: right;width: 200px;background-color: #1c2c5f;border-bottom: 1px solid #aeaeae;padding-top: 10px;padding-right: 10px;color: #fff;vertical-align: middle !important;">ًوينتهي في</th>
+                                                                <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                            <td colspan="3" style="text-align: center;    direction: ltr;font-size:20px !important;vertical-align: middle !important;border:1px solid #aeaeae;"><span t-esc="o.date_end" /></td>
+                                                                <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                                                <th scope="col" style="text-align: left;width:200px;background-color: #1c2c5f;    border-bottom: 1px solid #aeaeae;padding-top: 10px;font-family: 'timesnewromanps-boldmt';padding-left: 10px;color: #fff;vertical-align: middle !important;">To</th>
+                                          </tr>
+                                          <tr>
+                                            <th scope="col" style="text-align: right;width: 200px;background-color: #1c2c5f;border-bottom: 1px solid #aeaeae;padding-top: 10px;padding-right: 10px;color: #fff;vertical-align: middle !important;">ًبراتب شهري</th>
+                                              <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                            <td colspan="3" style="text-align: center;direction: ltr;font-size:20px !important;vertical-align: middle !important;border:1px solid #aeaeae;">SAR <span t-esc="o.net_contract_salary" /> / رس </td>
+                                              <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                              <th scope="col" style="text-align: left;width: 200px;background-color: #1c2c5f;    border-bottom: 1px solid #aeaeae;padding-top: 10px;font-family: 'timesnewromanps-boldmt';padding-left: 10px;color: #fff;vertical-align: middle !important;">Monthly Salary</th>
+                                          </tr>
+                                          <tr>
+                                            <th scope="col" style="text-align: right;width: 200px;background-color: #1c2c5f;padding-top: 10px;padding-right: 10px;color: #fff;vertical-align: middle !important;">الغرض‬</th>
+                                             <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                              <th colspan="2" scope="colgroup" style="text-align: center;padding-top: 10px;font-size:20px !important;vertical-align: middle !important;border:1px solid #aeaeae;">‫استقالة‬</th>
+                                            <th colspan="1" scope="colgroup" style="text-align: center;padding-top: 10px;font-size:20px !important;vertical-align: middle !important;border:1px solid #aeaeae;">Resignation</th>
+                                              <th scope="col" style="text-align: right;width:50px;border:1px solid #aeaeae;"><span style="text-align: center;vertical-align:middle;padding-top: 25px;padding-right:5px;
+    white-space: nowrap;
+    writing-mode: vertical-lr !important;
+  -webkit-writing-mode: vertical-lr !important;
+  -ms-writing-mode: vertical-lr !important;
+    display: block;">..</span>‫‬</th>
+                                              <th scope="col" style="text-align: left;width: 200px;background-color: #1c2c5f;padding-top: 10px;font-family: 'timesnewromanps-boldmt';padding-left: 10px;color: #fff;vertical-align: middle !important;">Reason for Leaving</th>
+                                          </tr>
+
+                                        <tr>
+                        <th colspan="4" scope="colgroup" style="text-align: right;font-size: 20px;padding-right:10px;padding-top:10px;border:1px solid #aeaeae;">وقد تم إصدار هذه الشهادة للمذكور / المذكورة أعلاه بناءً على طلبه/طلبها وبدون أدنى مسؤولية على المركز الوطني للدراسات والبحوث الاجتماعية.‬</th>
+    <th colspan="4" scope="colgroup" style="direction: ltr;;width:700px;font-family: 'timesnewromanps-boldmt';
+    font-size: 20px !important;text-align:left;padding-left:10px;padding-top:10px;border:1px solid #aeaeae;">This certification is issued to the
+employee upen his/her request with no
+responsibility to the National Center For
+Social Studies.</th>
+                    </tr>
+                                   </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </template>
+
+            <template id="ncss_employee_certificate_template">
+                <t t-call="web.html_container">
+                    <t t-set="data_report_margin_top" t-value="1"/>
+                    <t t-set="data_report_orientation" t-value="Landscape"/>
+                    <t t-set="data_report_header_spacing" t-value="0"/>
+                    <t t-foreach="docs" t-as="o">
+                        <t t-call="ncss_employee_templates.report_empoyee_certificate_docs"
+                           t-lang="request.env.user.partner_id.lang"/>
+                    </t>
+                </t>
+            </template>
+    </data>
+</odoo>

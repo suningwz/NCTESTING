@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="empty_work_contract_report"
+                string="عقد عمل مفرغ"
+                model="hr.contract"
+                report_type="qweb-pdf"
+                file="ncss_employee_templates.empty_work_contract_report"
+                name="ncss_employee_templates.empty_work_contract"
+                />
+
+        <template id="empty_work_contract_docs">
+<t t-call="web.internal_layout">
+<t t-foreach="docs" t-as="o">
+
+  <div class="page container ncss5">
+      <style>
+        @font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/ncss_employee_templates/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/ncss_employee_templates/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+/*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/ncss_employee_templates/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/ncss_employee_templates/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+
+
+@font-face {
+    font-family: 'arialmt';
+    font-weight: bold;
+    src: local('arialmt'), local('arialmt'), url(/ncss_employee_templates/static/src/fonts/arialmt.ttf) format('truetype');
+}
+
+.ncss5 {
+direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+
+}
+
+.ncss5 .c16 h4
+{
+    text-align: center;
+    font-size: 40px;
+}
+
+.ncss5 .c16 p
+{
+    text-align: right;
+    font-size: 23px;
+}
+
+.ncss5 .c16 ul li
+{
+    text-align: right;
+    font-size: 23px;
+    margin-bottom: 15px;
+    padding-right: 35px;
+    display: block;
+}
+
+.ncss5 hr
+{
+    width: 170px;
+    border-top: 3px solid #aeaeae;
+}
+      </style>
+      <div class="row c16">
+          <div style="width:100%;margin-top:35px;text-align:center;">
+                   <div>
+                    <img src="/ncss_employee_templates/static/src/img/ncsslogo2a.png" />
+                </div>
+          </div>
+      </div>
+      
+             <div class="row c16" style="margin-top:30px;background: url(/ncss_employee_templates/static/src/img/ncssbg.png);background-position: 45% 30%;
+    background-repeat: no-repeat;">
+            <div style="width:100%;">
+             <t t-set="date" t-value="o.date_start"/>
+                
+                <div style="margin-right: 25px;border:1px solid #aeaeae;border-radius:10px;padding-right:15px;padding-top:15px;">
+                    <div style="    text-align: right;">
+                        <p style="color:#fff;padding-top:5px;padding-bottom:5px;background-color: #1c2c5f;display:inline-block;padding-right:10px;padding-left:10px;width:660px;">
+                        أنه في <span t-esc="o.get_day_name_from_date(date)" /> الأحد الموافق <span t-esc="o.date_start"/> م, قد تم الاتفاق بين كل من:
+
+                        </p>
+                    </div>
+                    
+                    <p>
+                        أ – المركز الوطني
+                                   للدراسات والبحوث الاجتماعية – المملكة العربية السعودية – الرياض والمشار إليها
+                                   فيما بعد بـ (صاحب العمل) ويمثله مدير عام المركز الاستاذ الدكتور سامي بن عبد
+                                   العزيز الدامغ.
+                    </p>
+                    
+                    <p>ب - الاستاذ / <span style="font-size:28px;">
+                        <span t-esc="o.employee_id.name" />
+                    </span>  , بطاقة أحوال <span style="font-size:28px;">
+                        <span t-if='o.employee_id.identification_id' t-esc="o.employee_id.identification_id"/>
+                    </span>  صادرة من <span t-if='o.employee_id.country_id' t-esc="o.employee_id.country_id.name"/>
+                        بتاريخ <span t-if='o.employee_id.iqama_date_of_issue' t-esc="o.employee_id.iqama_date_of_issue"/>،
+                        والمقيم في مدينة الرياض والمشار إليه فيما بعد بـ (الموظف) ويُعمل به اعتباراً من تاريخ التحاق الموظف بالعمل.</p>
+                    
+                    
+                    <div style="text-align: right;">
+                        <p style="color:#fff;padding-top:5px;padding-bottom:5px;background-color: #1c2c5f;display:inline-block;padding-right:10px;padding-left:10px;width:250px;">اتفق الطرفان على الآتي:</p>
+                    </div>
+                    
+                    <p style="color:#ee8323;">مـادة (1) تصنيف الوظيفة: </p>
+                    
+                    <p><span style="padding-right:25px;display:block;padding-bottom:5px;">قبل الموظف العمل لدى صاحب العمل وفق لائحة تنظيم العمل ونظام العمل السعودي ووفق شروط هذا العقد بوظيفة <span style="font-size:28px;">
+                        (<span t-if='o.job_id' t-esc="o.job_id.name"/>).</span>
+                    </span></p>
+                    
+                    <p style="color:#ee8323;">مـادة (2) الراتــب:</p>
+                    <p><span style="padding-right:25px;display:block;padding-bottom:5px;">يحصل الموظف على راتب شهري قدره ( <span t-esc="o.net_contract_salary"/> ريال ) المبلغ كتابتاً ريال فقط، يدفع له في نهاية كل شهر ميلادي والراتب على أساس ثمان ساعات عمل يومية فعلية.</span></p>
+                    
+                    <p style="color:#ee8323;">مـادة (3) الإسكان والعلاج:</p>
+                    <p><span style="padding-right:25px;display:block;">يمنح الموظف الذي لا يوفر له المركز سـكناً عينياً، بدلاً نقدياً سنوياً يعادل الراتب الأساسي لثلاثة أشهر بواقع ( <span t-esc="o.wage * 3"/> ريال المبلغ كتابتا ريالاً مع الراتب الأساسي شهرياً, ويحصل على العلاج طبقاً للنظام المحدد لذلك.</span></p>
+                    
+                    <p style="color:#ee8323;">مـادة (4) المواصــلات:</p>
+                    <p style="padding-bottom:35px;"><span style="padding-right:25px;display:block;">
+                        يوفر صاحب العمل للموظف وسيلة انتقال فردية / جماعية للانتقال ما بين سكنه ومقر عمله، وفي حال تعذر ذلك يدفع صاحب العمل بدل نقل قدره (<span t-esc="o.transportation_allowance"/>ريال ) حسب النظام المعمول به شهرياً.
+                        </span></p>
+                    
+                   <p><span style="color:#ee8323;">مـادة (5) بدل طبيعة العمل / بدل ندرة:</span>يدفع صاحب العمل بدل طبيعة عمل و/ أو بدل ندرة للموظف بحسب الوظيفة التي يحددها صاحب العمل وبموافقته ممثلاً بمدير وفق النظام المعمول به في الشركة.</p>
+                    
+                    <p style="color:#ee8323;">مـادة (6) العمل الإضافي:</p>
+                    <p><span style="padding-right:25px;display:block;">
+                        لا يحق للموظف مطالبة صاحب العمل بأي أجر عن ساعات العمل الإضافية إلا إذا كان ذلك بتكليف خطي من صاحب العمل أو من يمثله.
+                        </span></p>
+
+
+                    <p style="color:#ee8323;">مـادة (7) الإجــــازة:</p>
+                    <p><span style="padding-right:25px;display:block;">يعطي صاحب العمل إجازة مقدارها ( 30 ) يوماً مقابل كل سنة خدمة عملها الموظف, وتحسب هذه الإجازة على أساس الراتب الأساسي الشهري وفق لائحة الاجازات.</span></p>
+
+                    <p style="color:#ee8323;">مـادة (8) مقر العمل:</p>
+                    <p><span style="padding-right:25px;display:block;">
+                        يكون مقر العمل الرئيسي في مدينة الرياض على أنه يحق لصاحب العمل أن ينقل الموظف إلى أي فرع من فروعه داخل المملكة دون أن يضر ذلك بالفوائد المكتسبة للموظف.
+                        </span></p>
+
+
+                     <p style="color:#ee8323;">مـادة (9) فترة الاختبار:</p>
+                    <p><span style="padding-right:25px;display:block;">
+                            يظل الموظف في فترة اختبار تجريبية لمدة ثلاثة أشهر, ويحق لصاحب العمل إنهاء هذا العقد في أي وقت أثناء هذه الفترة إذا قرر صاحب العمل وحسب رأيه المطلق أن الموظف لا يصلح للعمل لديه وذلك دون إعطاء إنذار مسبق أو مكافأة ولا يحق للطرف الثاني المطالبة بأية تعويضات عدا الراتب المستحق عن أيام الدوام الفعلية.
+                        </span></p>
+
+                    <p style="color:#ee8323;">مـادة (10) مدة العقد:</p>
+                    <p><span style="padding-right:25px;display:block;">
+                        	مدة هذا العقد سنة واحدة يتجدد لمدة مماثلة باتفاق الطرفين مالم يخطر أحد الطرفين الآخر بعدم 	رغبته في تحديد العقد قبل إنتهاء مدته بشهر على الأقل.
+                        </span></p>
+
+                    <p style="color:#ee8323;">مـادة (11) إفشاء المعلومات:</p>
+                    <p>
+                        <ul>
+                            <li>يتعهد الموظف بعدم القيام بتصوير أية مسندات أو إفشاء أو تسريب أو استخدام أية معلومات بشكل مباشر أو غير مباشر لأي شخص أو مؤسسة أو أي جهة أخرى أياً كان نوعها وعدم التعرض للشركة  في وسائل التواصل الاجتماعي أو الإدلاء بأية تصاريح اعلامية لأي جهة سواء تتعلق بشؤون أو ممتلكات صاحب العمل أو عمل خاص به أو الأفراد العاملين فيه أو تتعلق بصاحب العمل عدا تلك التي تعطى للموظفين ذوي العلاقة في نفس العمل الذين يحق لهم معرفتها ويحتاجونها في إطار عملهم الرسمي, طيلة فترة سريان عقد العمل وفي أي وقت بعده إلا بموافقة خطية مسبقة ومحددة من صاحب العمل</li>
+
+                            <li>يدرك الموظف تماماً أنه في حالة إخلالها بمضمون الفقرة (11-أ) فلصاحب العمل كامل الحق في إنهاء خدماته دون مكافأة أو تعويض استناداً لأحكام المـادة (80) من نظام العمل. (1) وأن يطالبه أمام الجهات الرسمية حسب تقديره بالتعويض عن الأضرار والخسائر التي تلحق بصاحب العمل في هذا الشأن.</li>
+                        </ul>
+                    </p>
+
+                        <p style="color:#ee8323;">مـادة (12) انتهاء الخدمة:</p>
+                    <p style="padding-right:25px;display:block;">ينتهي خدمة الموظف لأي من الأسباب التالية:</p>
+                    <ul>
+                        <li>    أ- انتهاء المدة المحددة للعقد.
+    ب- يحق لصاحب العمل إنهاء العقد دون سابق إنذار أو مكافأة أو تعويض في أي وقت وطيلة فترة الاختبار أو لأي سبب من الأسباب المبينة في المـادة (80) من نظام العمل.</li>
+
+                        <li> الفصل لأسباب صحية: في حالة مرض الموظف وفقدانه القدرة على مزاولة العمل المناط به، أو في حالة مرضه بما نجم عنه انقطاعه عن العمل فترة 120 يوماً متتالية أو متقطعة أثناء سنة خدمة واحدة, فإن خدمة الموظف بموجب هذا العقد تكون منتهية. وفقاً للمـادة (79) من نظام العمل(2).</li>
+
+                        <li>إذا أصبح الموظف غير قادرة على أداء العمل بسبب فعل رسمي صادر عن الحكومة السعودية أو بسبب إنهاء خدمتها بناء على طلب السلطات الرسمية السعودية أو إذا انشغل الموظف بأداء أي عمل يعود عليه بدخل شخصي أو عائد أو وعد بعائد ليست له علاقة مباشرة بصاحب العمل بدون إذن مسبق من صاحب العمل ومجاز من قبل موظفي الدولة المختصين، فإنه يجوز لصاحب العمل أن ينهي خدمة الموظف ويكون تاريخ الفصل الرسمي أو الطلب الصادر عن السلطات الرسمية هو آخر يوم عمل للموظف وفي جميع هذه الحالات لا يكون صاحب العمل ملزماً بإصدار إخطار مسبق.</li>
+                        </ul>
+
+                        <p><span style="color:#ee8323;">مـادة (13):</span></p>
+                        <p tyle="padding-right:25px;display:block;">يسري نظام العمل السعودي على كل ما لم يرد بشأنه نص محدد في هذا الاتفاق.</p>
+
+                        <p><span style="color:#ee8323;">مـادة (14):</span></p>
+                        <p style="padding-right:25px;display:block;"> يقر الموظف بأنه قد قرأ وفهم كل ما هو مدون في هذا العقد ولا يحق أن تطبق على هذا العقد أية شروط أو تعديلات أخرى سواء أكانت شفهية أم كتابية وسواء أكانت سابقة أم لاحقة.</p>
+
+
+
+                        <p><span style="padding-right:25px;color:#ee8323;">الموظف</span> <span style="padding-right:400px;color:#ee8323;"> صاحب العمل</span></p>
+                        <p>الاسم: <span style="padding-right:300px;">الاسم: </span></p>
+                        <p>التوقيع: <span style="padding-right:285px;">التوقيع:</span></p>
+                        <p style="margin-bottom:30px !important;">التاريخ : <span style="padding-right:285px;">التاريخ :</span></p>
+
+
+
+
+<!--                    <p style="padding-right:25px;display:block;margin-top:20px;margin-bottom:20px;"><span><hr/></span></p>-->
+
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    
+    
+    
+   
+    
+
+          
+
+<!--      <table>-->
+<!--                        <th style="text-align:center;color:#ee8323;">الموظف</th>-->
+<!--                        <th style="text-align:center;color:#ee8323;">صاحب العمل</th>-->
+<!--                        <tbody>-->
+<!--                            <tr>-->
+<!--                                <td style="text-align:center;color:#ee8323;">الاسم</td>-->
+<!--                                <td style="text-align:center;color:#ee8323;">-->
+<!--                                    <span t-esc="o.employee_id.name" />-->
+<!--                                </td>-->
+<!--                                <td style="text-align:center;color:#ee8323;">-->
+<!--                                    <span t-esc="o.company_id.name" />-->
+<!--                                </td>-->
+<!--                                <td style="text-align:center;color:#ee8323;">الاسم</td>-->
+<!--                            </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+                
+          
+      
+      
+   
+      
+    <div class="footer" style="text-align: center;padding:0px;">
+            <div style="margin-bottom: 0px;">
+                <img src="/ncss_employee_templates/static/src/img/ncss5footer1.png" />
+              </div>
+
+          </div>
+        
+      </div>
+
+
+</t>
+</t>
+
+</template>
+
+        <template id="empty_work_contract">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="1"/>
+                <t t-set="data_report_orientation" t-value="Landscape"/>
+                <t t-set="data_report_header_spacing" t-value="0"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="ncss_employee_templates.empty_work_contract_docs"
+                       t-lang="request.env.user.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+
+        <record id="account_move_form_inherit" model="ir.ui.view">
+            <field name="name">account.move</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="partner_id" string="Holder Name"/>
+                    <field name="bayan" attrs="{'invisible' : [('type', '!=', 'entry')]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='line_ids']" position="attributes">
+                    <attribute name="context">
+                        {'line_ids': line_ids,
+                        'journal_id': journal_id,
+                        'default_partner_id': commercial_partner_id,
+                        'default_currency_id': currency_id != company_currency_id and currency_id or False,
+                        'default_bayan':bayan}
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='line_ids']//tree//field[@name='partner_id']" position="before">
+                    <field name="payment_order_number" optional="show"/>
+                    <field name="bayan" optional="show"/>
+                </xpath>
+
+                <xpath expr="//page[@id='other_tab_entry']//field[@name='narration']" position="replace" />
+
+                <xpath expr="//field[@name='line_ids']" position="after">
+                    <field name="narration" attrs="{'invisible': [('type', '!=', 'entry')]}"/>
+                </xpath>
+
+
+
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

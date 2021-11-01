@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/ncss_report_pdf/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/ncss_report_pdf/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+/*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/ncss_report_pdf/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/ncss_report_pdf/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+
+.ncss4 {
+direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+     background-color: #fff !important;
+
+}
+
+.ncss4 .c1a .table-bordered td{
+    border: 1px solid #aeaeae;
+    font-size: 23px;
+    padding-top:20px !important;
+}
+
+.ncss4 .c1a .table-bordered th 
+{
+    border: 1px solid #aeaeae;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 22px;
+}
+
+.ncss4 .c2a h1
+{
+    text-align: center;
+    font-size: 60px;
+    color: #49c3b1;
+}
+
+.ncss4 .c2a h3
+{
+    text-align: center;
+    font-size: 35px;
+    color: #898686;
+}
+
+.ncss4 .c2 .table-bordered td{
+    border: 1px solid #aeaeae;
+    font-size: 23px;
+    padding-top:20px !important;
+}
+
+.ncss4 .c2 .table-bordered th 
+{
+    border: 1px solid #aeaeae;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 23px;
+}
+
+.wb.table-bordered
+{
+    border: 1px solid #aeaeae !important;
+}
+
+.remarks hr
+{
+    width: 860px;
+    margin-top: 28px;
+    border-top: 1px solid #aeaeae;
+    margin-right: 100px;
+}
+
+.ncss4 .remarks .table-bordered td{
+    border: 2px solid #aeaeae;
+    font-size: 23px;
+    padding-top:20px !important;
+}
+
+.ncss4 .remarks .table-bordered th 
+{
+    border: 2px solid #aeaeae;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 23px;
+}

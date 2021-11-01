@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+.top-header{margin-top:-10px;padding:0px;height:40px;}
+
+.new3 .juanlogo{width:40%;}
+
+.new3 {
+direction: rtl;
+    font-family: 'Calibri-Bold'
+
+}
+
+.new3 h4
+{
+    font-size: 16px;
+}
+
+.new3b1
+{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.new3b1 h4
+{
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.borders
+{
+    border: 3px solid #6991c4;
+    border-radius: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.new3b2 h4
+{
+    text-align: center;
+}
+
+.new3b3 h4
+{
+    text-align: center;
+}
+
+.new3b4 h4
+{
+    text-align: center;
+}
+
+.new3b5 h4
+{
+    text-align: center;
+}
+
+.new3b6 h4
+{
+    text-align: center;
+}
+
+.new3b7 h4
+{
+    text-align: center;
+}
+
+.new3b8 h4
+{
+    text-align: center;
+}
+
+.new3b9 h4
+{
+    text-align: center;
+}
+
+.new3b10 h4
+{
+    text-align: center;
+}
+
+.new3b11 h4
+{
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.new3b12a
+{
+    width: 200px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: #d8d8d8;
+}
+
+.new3b13 h4
+{
+    text-align: center;
+/*    text-decoration: underline;*/
+    border-bottom: 1px solid;
+    display: inline-block;
+}
+
+.new3b13a h4
+{
+    text-align: center;
+}
+
+.new3b14
+{
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: #d8d8d8;
+}
+
+.new3b15
+{
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+
+.new3b16 h4
+{
+    text-align: center;
+}
+
+.new3b16 span
+{
+    text-align: center;
+    display: block;
+}
+
+.new3t th, .new3t td
+{
+    text-align: center;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding:0px !important;
+    border: 0px !important;
+    font-size: 14px;
+}
+

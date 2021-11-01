@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Arial-BoldMT';
+    font-weight: bold;
+    src: local('Arial-BoldMT'), local('Arial-BoldMT'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/Arial-BoldMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    font-weight: bold;
+    src: local('Calibri-Bold'), local('Calibri-Bold'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/Calibri-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TimesNewRomanPSMT';
+/*    font-weight: bold;*/
+    src: local('TimesNewRomanPSMT'), local('TimesNewRomanPSMT'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/TimesNewRomanPSMT.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'timesnewromanps-boldmt';
+    font-weight: bold;
+    src: local('timesnewromanps-boldmt'), local('timesnewromanps-boldmt'), url(/telenoc_theme_helpdesk_v1/static/src/fonts/timesnewromanps-boldmt.ttf) format('truetype');
+}
+
+.ncss1 {
+direction: rtl;
+    font-family: 'Arial-BoldMT' !important;
+    font-size: 26px;
+
+}
+
+.title
+{
+    padding-top: 35px;
+}
+
+.c1
+{
+    border: 1px solid;
+    margin-left: 150px;
+    padding: 5px;
+    line-height: 30px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.c2
+{
+        border: 1px solid;
+    margin-right: 150px;
+    padding: 5px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-family: 'TimesNewRomanPSMT';
+}
+
+.c3 .table-bordered td{
+    border: 1px solid #000;
+    font-size: 26px;
+    padding-top:20px !important;
+}
+
+.c3 .table-bordered th 
+{
+    border: 1px solid #000;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 26px;
+}
