@@ -24,7 +24,7 @@
                     />
                 </xpath>
                 <xpath expr="//button[@name='action_post']" position="replace">
-                    <button name="action_post" string="Post" class="oe_highlight"
+                    <button name="action_post" string="Posted" class="oe_highlight"
                             type="object" groups="ncss_journal_restrictions.general_director"
                             attrs="{'invisible': [('state', '!=', 'Financial auditor'),'|',('type', '=', 'entry'),('state', '!=', 'draft')]}"/>
                 </xpath>
